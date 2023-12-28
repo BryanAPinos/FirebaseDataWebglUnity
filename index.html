@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | FirebaseTemplate</title>
+    <title>Unity WebGL Player | My project</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
@@ -20,7 +20,7 @@
       <div id="unity-footer">
         <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">FirebaseTemplate</div>
+        <div id="unity-build-title">My project</div>
       </div>
     </div>
     <script>
@@ -56,15 +56,15 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/FirebaseDataWebgl.loader.js";
+      var loaderUrl = buildUrl + "/builds.loader.js";
       var config = {
-        dataUrl: buildUrl + "/FirebaseDataWebgl.data",
-        frameworkUrl: buildUrl + "/FirebaseDataWebgl.framework.js",
-        codeUrl: buildUrl + "/FirebaseDataWebgl.wasm",
+        dataUrl: buildUrl + "/builds.data",
+        frameworkUrl: buildUrl + "/builds.framework.js",
+        codeUrl: buildUrl + "/builds.wasm",
         streamingAssetsUrl: "StreamingAssets",
-        companyName: "LeonardoTortoroPereira",
-        productName: "FirebaseTemplate",
-        productVersion: "4.0.0",
+        companyName: "DefaultCompany",
+        productName: "My project",
+        productVersion: "0.1",
         showBanner: unityShowBanner,
       };
 
@@ -105,7 +105,6 @@
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
-          window.unityInstance = unityInstance;
           loadingBar.style.display = "none";
           fullscreenButton.onclick = () => {
             unityInstance.SetFullscreen(1);
@@ -116,23 +115,5 @@
       };
       document.body.appendChild(script);
     </script>
-    <script src="https://www.gstatic.com/firebasejs/9.8.2/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.8.2/firebase-firestore-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.8.2/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.8.2/firebase-analytics-compat.js"></script>
-    <script>
-      const firebaseApp = firebase.initializeApp({
-  apiKey: "AIzaSyAdqVFSqvxhP0l3iRyODwI3BwgF8LjdkMI",
-  authDomain: "imagication-stevenscampus.firebaseapp.com",
-  projectId: "imagication-stevenscampus",
-  storageBucket: "imagication-stevenscampus.appspot.com",
-  messagingSenderId: "769415214746",
-  appId: "1:769415214746:web:a9ebaf0de67e7e4d4e5123",
-  measurementId: "G-2NHDWGRW2L"
-      });
-      const db = firebaseApp.firestore();
-      const auth = firebaseApp.auth();
-    </script>
   </body>
 </html>
-
